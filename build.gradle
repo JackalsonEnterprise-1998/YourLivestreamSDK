@@ -1,1 +1,27 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.yourcompany.livestreamsdk'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    // Optional: add WebRTC or RTMP dependencies
+    implementation 'org.webrtc:google-webrtc:1.0.32006'
+}
 
