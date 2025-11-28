@@ -1,40 +1,18 @@
-plugins {
-    id 'com.android.library'
-    id 'maven-publish'
-}
-
-android {
-    namespace 'com.yourcompany.livestreamsdk'
-    compileSdk 34
-
-    defaultConfig {
-        minSdk 21
-        targetSdk 34
-        versionCode 1
-        versionName "1.0.0"
+// Project-level Gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.0'
     }
 }
 
-dependencies {
-    // Optional WebRTC dependency for streaming
-    implementation 'org.webrtc:google-webrtc:1.0.32006'
-}
-
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.github.YOUR_USERNAME'
-            artifactId = 'YourLivestreamSDK'
-            version = '1.0.0'
-            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
-        }
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
-
 
